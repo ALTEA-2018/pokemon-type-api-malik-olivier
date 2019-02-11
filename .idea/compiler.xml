@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="pokemon-type-api-malik-olivier" target="10" />
+      <module name="pokemon-type-api-malik-olivier" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
