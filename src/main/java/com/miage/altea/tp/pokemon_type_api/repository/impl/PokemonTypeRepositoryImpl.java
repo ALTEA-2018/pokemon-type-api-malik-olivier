@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
 
     @Override
     public List<PokemonType> findAllPokemonType() {
-        return pokemons;
+        return pokemons.stream().sorted(Comparator.comparing(PokemonType::getId)).collect(Collectors.toList());
     }
 
     @Override

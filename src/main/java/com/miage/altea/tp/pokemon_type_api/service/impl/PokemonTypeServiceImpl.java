@@ -44,7 +44,6 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
     public List<PokemonType> getAllPokemonTypes(){
         var pokemons = pokemonTypeRepository.findAllPokemonType();
         pokemons.stream()
-                .sorted(Comparator.comparing(PokemonType::getId))
                 .forEach(pokemon -> pokemon.setName(this.translationRepository.getPokemonName(pokemon.getId(),LocaleContextHolder.getLocale())));
         return  pokemons;
     }
