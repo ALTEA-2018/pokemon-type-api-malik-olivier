@@ -2,6 +2,7 @@ package com.miage.altea.tp.pokemon_type_api.controller;
 
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 import com.miage.altea.tp.pokemon_type_api.service.PokemonTypeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class PokemonTypeController {
     }
 
     @GetMapping(value = "/",params = "types")
-    public List<PokemonType> getPokemonTypeFromName(@RequestParam("types") List<String> types){
+    public List<PokemonType> getPokemonTypeFromTypes(@RequestParam("types") List<String> types){
         return service.getPokemonTypesByType(types);
     }
 
